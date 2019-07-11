@@ -1,0 +1,110 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{
+    language=Java,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{javapurple}\bfseries,
+    stringstyle=\color{javared},
+    commentstyle=\color{javagreen},
+    morecomment=[s][\color{javadocblue}]{/**}{*/},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\renewcommand{\lstlistingname}{Snippet}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{ASRR Tech Training}
+\newcommand\hwnumber{0}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+ 
+\chead{\textbf{\Large Module \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+
+\section*{\hwnumber. Introduction}
+Resources:
+\begin{description}
+    \item \href{https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html}{Data types}
+    \item \href{https://stackoverflow.com/questions/5413548/java-prefix-postfix-of-increment-decrement-operators}{Prefix and postfix operators}
+    \item \href{https://stackoverflow.com/questions/20044845/do-while-and-while-comparison}{Do-while vs while}
+    \item \href{https://www.quora.com/In-which-order-is-a-for-loop-in-java-executed}{Order of a for loop}
+\end{description}
+
+
+Problems
+\begin{enumerate}
+\item
+What are primitive data types?
+
+\item
+Is \lstinline[]$int[]$ a primitive data type (explain why)?
+
+\item
+What is the difference between a float and a double?
+
+\item
+Why does snippet 1 produce a compilation error?
+\begin{lstlisting}[caption={\mbox{}}]
+final int a = 1;
+a = 5;
+System.out.println(a);
+\end{lstlisting}
+
+\item
+What is the difference between snippet 2 and 3?
+\begin{lstlisting}[caption={\mbox{}}]
+int a = 3;
+System.out.println(a--);
+\end{lstlisting}
+\begin{lstlisting}[caption={\mbox{}}]
+int a = 3;
+System.out.println(--a);
+\end{lstlisting}
+
+\item
+What is the difference between do-while loop and while loop?
+
+\item
+In what order is a for loop executed?
+
+\end{enumerate}
+
+\end{document}

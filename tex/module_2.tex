@@ -1,0 +1,120 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{
+    language=Java,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{javapurple}\bfseries,
+    stringstyle=\color{javared},
+    commentstyle=\color{javagreen},
+    morecomment=[s][\color{javadocblue}]{/**}{*/},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\renewcommand{\lstlistingname}{Snippet}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{ASRR Tech Training}
+\newcommand\hwnumber{2}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+ 
+\chead{\textbf{\Large Module \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+
+\section*{\hwnumber. Strings}
+Note: all your methods should be \lstinline{public static} in this module \\
+Resources:
+\begin{description}
+    \item \href{http://tutorials.jenkov.com/java/strings.html}{Strings}
+\end{description}
+
+
+Problems
+\begin{enumerate}
+\item
+Write a method that takes two strings as its input and returns the concatenated string as its output.
+
+\item
+Write a method that takes a string as its input and returns the last character of the string as its output.
+
+\item
+Write a method that takes a string as its input and returns whether the string is equal to "yes".
+
+\item
+Write a method that takes a string as its input and returns whether the string contains the word "yes" as its output.
+The input should be case insensitive.
+
+\item
+Write a method that takes a string as its input. The method should replace every "yes" in the string with a "no".
+It should then return the modified string.
+
+\item
+Write a method that takes a string as its input and returns whether the string starts 
+with "the" and ends with "end" as its output.
+
+\item
+Write a method that takes a string as its input and returns the last 5 characters of the string as its output.
+
+\item
+Write a method that takes a string as its input and returns the first word of a string.
+Hint: use \lstinline{String#indexOf} and \lstinline{String#substring}.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabular}{@{}rl@{}}
+      Input: & "Hello world" \\
+      Output: & "Hello"
+     \end{tabular}
+\end{description}
+
+\item
+Write a method that takes a string as its input and returns the 
+following string "the color 'red' is red" for any given color (replace red with the input string).
+
+\item
+Write a method that takes a string as its input. The method should convert the input string to uppercase.
+It should then return the modified string.
+
+\end{enumerate}
+
+
+
+\end{document}

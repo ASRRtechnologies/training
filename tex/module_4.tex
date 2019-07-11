@@ -1,0 +1,142 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{
+    language=Java,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{javapurple}\bfseries,
+    stringstyle=\color{javared},
+    commentstyle=\color{javagreen},
+    morecomment=[s][\color{javadocblue}]{/**}{*/},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\renewcommand{\lstlistingname}{Snippet}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{ASRR Tech Training}
+\newcommand\hwnumber{4}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+ 
+\chead{\textbf{\Large Module \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+
+\section*{\hwnumber. n-dimensional arrays}
+Note: all your methods should be \lstinline{public static} in this module \\
+Resources:
+\begin{description}
+    \item \href{https://www.programiz.com/java-programming/multidimensional-array}{n-dimensional arrays}
+\end{description}
+
+
+Problems
+\begin{enumerate}
+\item
+Write a method that takes a two-dimensional array of integers as its input. The method should print every integer in the array.
+
+\item
+Write a method that takes a two-dimensional array of integers as its input. The method should print every integer in every row with an odd index.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabularx}{\linewidth}{ r X }
+      Input: & \lstinline[]$double[][] a = \{ \{1, 2\}, \{3, 4\}, \{6, 7\}\}$ \\
+      Output: & \lstinline[]$3, 4$
+     \end{tabularx}
+\end{description}
+
+\item
+Write a method that takes a three-dimensional array of integers as its input and returns the sum of every integer in the array.
+
+\item
+Write a method that takes two-dimensional array of integers as its input. The method should determine whether the
+two-dimensional array is shaped like a square.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabularx}{\linewidth}{ r X }
+      Input: & \lstinline[]$double[][] a = \{ \{1.1, 2\}, \{3, 4.5\}\}$ \\
+      Output: & \lstinline[]$true$
+     \end{tabularx}
+    \item   
+     \begin{tabularx}{\linewidth}{ r X }
+      Input: & \lstinline[]$double[][] a = \{ \{1.1, 2\}, \{3\}\}$ \\
+      Output: & \lstinline[]$false$
+     \end{tabularx}
+\end{description}
+
+\item
+Write a method that multiplies a matrix by a scalar.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabularx}{\linewidth}{ r X }
+      Input: & \lstinline[]$double scalar, double[][] matrix$ \\
+      Output: & the calculated matrix \lstinline[]$double[][]$
+     \end{tabularx}
+\end{description}
+
+\item
+Write a method that multiplies a matrix by a vector. You should return an empty vector when the input is invalid.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabularx}{\linewidth}{ r X }
+      Input: & \lstinline[]$double[] vector, double[][] matrix$ \\
+      Output: & the calculated vector \lstinline[]$double[]$
+     \end{tabularx}
+\end{description}
+
+\item
+Write a method that calculates the sum of two matrices. You should return an empty matrix when the input is invalid.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabularx}{\linewidth}{ r X }
+      Input: & \lstinline[]$double[][] a, double[][] b$ \\
+      Output: & the sum of matrix \lstinline[]$a$ and matrix \lstinline[]$b$ as \lstinline[]$double[][]$
+     \end{tabularx}
+\end{description}
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,172 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{
+    language=Java,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{javapurple}\bfseries,
+    stringstyle=\color{javared},
+    commentstyle=\color{javagreen},
+    morecomment=[s][\color{javadocblue}]{/**}{*/},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\renewcommand{\lstlistingname}{Snippet}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{ASRR Tech Training}
+\newcommand\hwnumber{3}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+ 
+\chead{\textbf{\Large Module \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+
+\section*{\hwnumber. Arrays}
+Note 1: all your methods should be \lstinline{public static} in this module \\
+Note 2: try to use the enhanced for loop as much as possible. \\
+Resources:
+\begin{description}
+    \item \href{ https://www.webucator.com/tutorial/learn-java/arrays.cfm}{Arrays}
+\end{description}
+
+
+Problems
+\begin{enumerate}
+\item
+Write a method that takes an array of integers as its input. The method should print every integer in the array.
+
+\item
+Write a method that takes an array of integers as its input and returns the sum of every integer in the array.
+
+\item
+Write a method that calculates the mean of an array.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabular}{@{}rl@{}}
+      Input: & an array of integers \\
+      Output: & the mean of the array (might not be an integer)
+     \end{tabular}
+\end{description}
+
+\item
+Write a method that normalizes a vector.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabular}{@{}rl@{}}
+      Input: & a vector represented as a double array (\lstinline[]$double[]$) \\
+      Output: & the normalized vector represented as a double array (\lstinline[]$double[]$)
+     \end{tabular}
+\end{description}
+
+\item
+Write a method that calculates the sum of two vectors.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabular}{@{}rl@{}}
+      Input: & \lstinline[]$double[] a, double[] b$ (two vectors) \\
+      Output: & the sum of the two vectors (\lstinline[]$double[]$)
+     \end{tabular}
+\end{description}
+
+\item
+Write a method that replaces every 1 in an integer array with a 0.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabular}{@{}rl@{}}
+      Input: & \lstinline[]$int[]$ \\
+      Output: & the same integer array, but every 1 should be replaced with a 0
+     \end{tabular}
+\end{description}
+
+\item
+Write a method that removes every 1 in an integer array.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabularx}{\linewidth}{ r X }
+      Input: & \lstinline[]$int[]$ \\
+      Output: & the same integer array, but every 1 should be removed from the array 
+      (thus the output array may be shorter than the input array)
+     \end{tabularx}
+\end{description}
+
+\item
+Write a method that concatenates two arrays.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabularx}{\linewidth}{ r X }
+      Input: & \lstinline[]$int[]a, int[] b$ \\
+      Output: & all the elements from array a and array b in a single array (\lstinline[]$int[]$)
+     \end{tabularx}
+\end{description}
+
+\item
+Write a method that removes a section of an array.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabularx}{\linewidth}{ r X }
+      Input: & \lstinline[]$int[]a, int startIndex, int endIndex$ \\
+      Output: & array a, but every element from \lstinline[]$startIndex$ till \lstinline[]$endIndex$ should be removed
+      (both \lstinline[]$startIndex$ and \lstinline[]$endIndex$ are inclusive)
+     \end{tabularx}
+\end{description}
+
+\item
+Write the following method that sorts an array (do not use any sorting library, instead try to write the algorithm yourself)
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabularx}{\linewidth}{ r X }
+      Input: & \lstinline[]$int[] a$ \\
+      Output: & the sorted version of array a (the order does not matter)
+     \end{tabularx}
+\end{description}
+
+\end{enumerate}
+
+\end{document}
