@@ -1,0 +1,184 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{
+    language=Java,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{javapurple}\bfseries,
+    stringstyle=\color{javared},
+    commentstyle=\color{javagreen},
+    morecomment=[s][\color{javadocblue}]{/**}{*/},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\renewcommand{\lstlistingname}{Snippet}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{ASRR Tech Training}
+\newcommand\hwnumber{8}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+ 
+\chead{\textbf{\Large Module \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+
+\section*{\hwnumber. OOP: encapsulation}
+Note: try to make every field \lstinline[]$private$ \\
+Resources:
+\begin{description}
+    \item \href{https://www.w3schools.com/java/java_modifiers.asp}{OOP: access modifiers}
+    \item \href{https://beginnersbook.com/2013/05/encapsulation-in-java/}{OOP: encapsulation}
+\end{description}
+
+
+Problems
+\begin{enumerate}
+\item
+Create a class named "Circle" It should have the following attributes: x, y and radius. Make sure that the attributes are all
+\lstinline[]$private$.
+\begin{enumerate}
+\item
+Create a constructor with parameters x, y and radius that initializes the attributes in this class.
+\item
+Create getters and setters for the every attribute.
+\item
+Create a method that determines whether a circle intersects another circle.
+\begin{description}
+    \item Example behavior:
+    \item   
+     \begin{tabular}{@{}rl@{}}
+      Input: & a circle \\
+      Output: & \lstinline[]$true$ if and only if the this circle intersects the other circle
+     \end{tabular}
+\end{description}
+\end{enumerate}
+
+\newpage
+
+\item
+What does the code in the following snippet do? And why does it lead to this behavior?
+\begin{lstlisting}
+public class Person {
+
+    private int age = 0;
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.age++;
+    }
+
+}
+\end{lstlisting}
+
+\newpage
+
+
+\item
+What does the code in the following snippet do? And why does it lead to this behavior?
+\begin{lstlisting}
+public class Person {
+
+    public int age;
+
+    public Person(int age) {
+        this.age = age;
+    }
+
+    private int getAge() {
+        return age;
+    }
+}
+    
+public class Main {
+
+    public static void main(String[] args) {
+        Person person = new Person(11);
+        System.out.println(person.age);
+        System.out.println(person.getAge());
+    }
+
+}
+\end{lstlisting}
+
+\newpage
+
+\item
+What does the code in the following snippet do? And why does it lead to this behavior?
+\begin{lstlisting}
+    public class Person {
+
+        private int age;
+
+        public Person(int age) {
+            this.age = age;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        private void setAge(int age) {
+            this.age = age;
+        }
+    }
+
+    public class Main {
+
+        public static void main(String[] args) {
+            Person person = new Person(11);
+            System.out.println(person.getAge());
+            person.setAge(1);
+            System.out.println(person.getAge());
+        }
+
+    }
+\end{lstlisting}
+
+\item
+What is the purpose of encapsulation?
+
+\end{enumerate}
+
+\end{document}

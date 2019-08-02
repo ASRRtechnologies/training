@@ -1,0 +1,180 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{
+    language=Java,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{javapurple}\bfseries,
+    stringstyle=\color{javared},
+    commentstyle=\color{javagreen},
+    morecomment=[s][\color{javadocblue}]{/**}{*/},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\renewcommand{\lstlistingname}{Snippet}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{ASRR Tech Training}
+\newcommand\hwnumber{10}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+ 
+\chead{\textbf{\Large Module \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+
+\section*{\hwnumber. OOP: Abstraction}
+Resources:
+\begin{description}
+    \item \href{https://www.w3schools.com/java/java_abstract.asp}{Abstract classes}
+    \item \href{https://www.w3schools.com/java/java_interface.asp}{Interfaces}
+\end{description}
+
+
+Problems
+\begin{enumerate}
+\item
+Create an abstract class "Shape". 
+It should have the following attributes: x and y.
+It should have the following methods: getArea and getPerimeter.
+Also create the constuctor, getters and setters.
+\begin{enumerate}
+\item
+Create a class "Circle". It should have one field called radius. Also create the constructor, getter and setter. The class Circle should inherit from class Shape.
+
+\item
+Create a class "Rectangle". It should have the following fields: width and height. Also create the constructor, getters and setters. The class Rectangle should inherit from class Shape.
+
+\item
+Create an interface "Translatable". It should have the following method:\\ \lstinline[]$translate(dx, dy)$
+
+\item
+Create a class "TranslatableCircle". It should inherit from Circle and Translatable. \\
+
+\textbf{The following code should be written in your main method.}
+\item
+Create an array of 4 shapes. This array should be initialized with both rectangles AND normal circles. Iterate over the array and print the area and perimeter of every shape.
+
+\item
+Why do you not need to use the \lstinline[]$instanceof$ operator in this case?
+
+\item
+Create a TranslatableCircle. Use the translate method to translate the circle and print the coordinates.
+
+\end{enumerate}
+
+\newpage
+
+\item
+What does the code in the following snippet do? And why does it lead to this behavior?
+\begin{lstlisting}
+public abstract class Entity {
+
+    private String name;
+
+    public Entity(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Entity entity = new Entity("bob");
+        System.out.println(entity.getName());
+    }
+
+}
+\end{lstlisting}
+
+\newpage
+
+\item
+What does the code in the following snippet do? And why does it lead to this behavior?
+\begin{lstlisting}
+public abstract class Entity {
+
+    private String name;
+
+    public Entity(String name) {
+        this.name = name;
+    }
+
+    public abstract String getName();
+
+}
+
+public class Monster extends Entity {
+
+    public Monster(String name) {
+        super(name);
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Monster monster = new Monster("bob");
+        System.out.println(monster.getName());
+    }
+
+}
+\end{lstlisting}
+
+\item
+What are the differences between interfaces and abstract classes?
+
+\item
+What is abstraction?
+
+\end{enumerate}
+
+\end{document}
