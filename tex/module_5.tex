@@ -1,0 +1,102 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{
+    language=Java,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{javapurple}\bfseries,
+    stringstyle=\color{javared},
+    commentstyle=\color{javagreen},
+    morecomment=[s][\color{javadocblue}]{/**}{*/},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\renewcommand{\lstlistingname}{Snippet}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{ASRR Tech Training}
+\newcommand\hwnumber{5}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+ 
+\chead{\textbf{\Large Module \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+
+\section*{\hwnumber. Classes: introduction and attributes}
+Note: attributes (fields) should NOT be \lstinline{static} in this module \\
+Resources:
+\begin{description}
+    \item \href{https://www.w3schools.com/java/java_classes.asp}{Classes: introduction}
+    \item \href{https://www.w3schools.com/java/java_classes.asp}{Classes: attributes}
+\end{description}
+
+
+Problems
+\begin{enumerate}
+\item
+Create a class named "Pizza". It should have the following attributes: price, name and description. 
+\begin{enumerate}
+\item 
+Write a method
+that creates an instance of the class "Pizza". The method should initialize the object with appropriate values (e.g. \$9.50, "Margherita", "A very nice pizza").
+\item
+Write a \lstinline[]$static$ method that prints every attribute of a pizza instance.
+\end{enumerate}
+
+\item
+Create a class named "Person". It should have the following attributes: age, name and friend. The attribute friend
+could be another "Person"".
+
+\begin{enumerate}
+\item 
+Write a method that creates an instance of class "Person".
+The method should initialize the object with appropriate values (e.g. 33, "Bob").
+The friend attribute of this instance should be initialized to another instance of class "Person" 
+(the friend attribute of this person should be \lstinline[]$null$).
+\item
+Write a \lstinline[]$static$ method that prints every attribute of a person instance. It should print the friend attribute
+RECURSIVELY.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}

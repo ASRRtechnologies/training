@@ -1,0 +1,166 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{
+    language=Java,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{javapurple}\bfseries,
+    stringstyle=\color{javared},
+    commentstyle=\color{javagreen},
+    morecomment=[s][\color{javadocblue}]{/**}{*/},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\renewcommand{\lstlistingname}{Snippet}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{ASRR Tech Training}
+\newcommand\hwnumber{6}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+ 
+\chead{\textbf{\Large Module \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+
+\section*{\hwnumber. Classes: methods and the static keyword}
+Note: class member methods should NOT be \lstinline{static} in this module \\
+Resources:
+\begin{description}
+    \item \href{https://www.w3schools.com/java/java_class_methods.asp}{Classes: methods}
+    \item \href{https://www.baeldung.com/java-static}{Classes: the static keyword}
+\end{description}
+
+
+Problems
+\begin{enumerate}
+\item
+Create a class named "Vector" It should have the following attributes: x, y and z.
+\begin{enumerate}
+\item
+Create a method in the class that prints the values of x, y and z.
+
+\item
+Create a method in the class that calculates the length of the vector.
+
+\item
+Create a method in the class that normalizes the attributes of the vector. It should use the
+previous method in the calculation.
+
+\item
+Create a method in the class that adds two vectors together. It should return the sum of the two vectors as a new vector.
+This method should NOT be \lstinline[]$static$ and it should only have ONE parameter.
+\end{enumerate}
+
+\item
+What does the code in the following snippet do? And why does it lead to this behavior?
+\begin{lstlisting}
+public class Person {
+
+    public int age;
+
+    public void setAge(int newAge) {
+        age = newAge;
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Person.setAge(3);
+    }
+
+}
+\end{lstlisting}
+\newpage
+
+\item
+What does the code in the following snippet do? And why does it lead to this behavior?
+\begin{lstlisting}
+public class Person {
+
+    public int personCount = 0;
+
+    public static void registerPerson() {
+        personCount++;
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Person.registerPerson();
+    }
+
+}
+\end{lstlisting}
+
+\item
+What does the code in the following snippet do? And why does it lead to this behavior?
+\begin{lstlisting}
+public class Car {
+    public static int carCount = 0;
+
+    public static Car produce() {
+        carCount++;
+        Car car = new Car();
+        return car;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Car.produce();
+        Car.produce();
+        Car.produce();
+    }
+    
+}
+\end{lstlisting}
+
+\item
+What are the effects of the static keyword?
+
+\end{enumerate}
+
+\end{document}
